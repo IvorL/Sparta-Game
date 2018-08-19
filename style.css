@@ -1,0 +1,115 @@
+.container {
+  width: 100%;
+  height: 800px;
+  background-color: lightblue;
+  border-radius: 15px;
+  text-align: center;
+  background-image: url("blackjack-1.jpg"); opacity: 0.92;
+  padding-top: 15px;
+}
+
+h1 {
+  color: white;
+  text-decoration: underline overline;
+  font-weight: bold;
+  margin-left: 55px;
+}
+
+.cardContainer {
+  display: inline-block;
+  margin: 10px 0 0 55px;
+}
+
+.playingCard {
+  height: 160px;
+  width: 100px;
+  border-radius: 10px;
+  border: 3px solid black;
+  background-color: #eaecef;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.cardSuit {
+  font-size: 20px;
+  padding-top: 10px;
+  margin-left: 5px;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  float: left;
+  padding-left: 5px;
+}
+
+.cardNumber {
+  font-size: 17px;
+  padding-top: 10px;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  float: left;
+  padding-left: 5px;
+}
+
+.cardNumber-2 {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-right: 9px;
+  height: 15px;
+  width: 25px;
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 120px;
+}
+.cardSuit-2 {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-right: 5px;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 120px;
+}
+
+
+.controlsContainer {
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+.controls-1 {
+  display:inline-block;
+  padding: 0 65px 0 65px;
+}
+
+.displayPlayer {
+  font-weight: bold;
+  color: white;
+  padding-bottom: 15px;
+  text-decoration: underline;
+}
+
+.playerScores{
+  color: white;
+}
+
+.displayResult {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+button {
+  width: 60px;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+}
