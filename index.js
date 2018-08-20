@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
         displayResults[1].innerHTML = ("You win!");
         displayResults[1].style.marginLeft = "255px";
       }
+      disableButtons();
     }
   }
 
@@ -164,52 +165,56 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     // disable all buttons after a win
     if (playerOneScore > 21 || playerTwoScore > 21) {
-      hitButtons[0].removeEventListener("click", playerOneTurn);
-      hitButtons[1].removeEventListener("click", playerTwoTurn);
-      stickButtons[0].removeEventListener("click", onStickPlayerOne);
-      stickButtons[1].removeEventListener("click", onStickPlayerTwo);
+      disableButtons();
     }
+  }
+
+  function disableButtons() {
+    hitButtons[0].removeEventListener("click", playerOneTurn);
+    hitButtons[1].removeEventListener("click", playerTwoTurn);
+    stickButtons[0].removeEventListener("click", onStickPlayerOne);
+    stickButtons[1].removeEventListener("click", onStickPlayerTwo);
   }
 
   function dealInitialCards() {
     // Select first card to be displayed for player one
     var card1 = dealCard();
-    // select the corresponding html elements in order to display the card
+    // Select the corresponding html elements in order to display the card
     var suitElementCard1 = document.getElementById('card1-suit');
     var suitElement2Card1 = document.getElementById('card1-suit2');
     var numberElementCard1 = document.getElementById('card1-number');
     var numberElement2Card1 = document.getElementById('card1-number2');
-
-    // set the elements and update player score
+    // Set the elements and update player score
     displayNumber(card1.rank, numberElementCard1);
     displayNumber(card1.rank, numberElement2Card1);
     displaySuitSymbol(card1.suit, suitElementCard1);
     displaySuitSymbol(card1.suit, suitElement2Card1);
     playerOneScore += card1.getCardValue();
+
     // Select first card to be displayed for player two
     var card3 = dealCard();
-    // select the corresponding html elements in order to display the card
+    // Select the corresponding html elements in order to display the card
     var suitElementCard3 = document.getElementById('card3-suit');
     var suitElement2Card3 = document.getElementById('card3-suit2');
     var numberElementCard3 = document.getElementById('card3-number');
     var numberElement2Card3 = document.getElementById('card3-number2');
-    // set the elements to a value and update player score
+    // Set the elements to a value and update player score
     displayNumber(card3.rank, numberElementCard3);
     displayNumber(card3.rank, numberElement2Card3);
     displaySuitSymbol(card3.suit, suitElementCard3);
     displaySuitSymbol(card3.suit, suitElement2Card3)
     playerTwoScore += card3.getCardValue();
 
-    // deals and displays a second card for each player
+    // Deals and displays a second card for each player
     playerOneTurn();
     playerTwoTurn();
   }
 
-  // Event listener for the 'Hit' buttons
+  // Event listeners for the 'Hit' buttons
   var hitButtons = document.getElementsByClassName('hit');
   hitButtons[0].addEventListener("click", playerOneTurn);
   hitButtons[1].addEventListener("click", playerTwoTurn);
-  // Event listener for the 'Stick' buttons
+  // Event listeners for the 'Stick' buttons
   var stickButtons = document.getElementsByClassName('stick');
   stickButtons[0].addEventListener("click", onStickPlayerOne);
   stickButtons[1].addEventListener("click", onStickPlayerTwo);
@@ -229,5 +234,4 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   playBlackJack();
-
 });
