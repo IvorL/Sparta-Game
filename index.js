@@ -1,11 +1,10 @@
-// Add an event listener to wait for DOM content to load
 document.addEventListener("DOMContentLoaded", function() {
   // Array to hold the suit of each card
   var suitArray = ["Clubs", "Diamonds", "Hearts", "Spades"];
   // Array to hold the rank of each suit
-  var rankArray = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen"];
+  var rankArray = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "K", "Q"];
   // Array to hold the value of each card
-  var rankValue = {"Ace" : 1, "2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "10" : 10, "Jack" : 10, "King" : 10, "Queen" : 10};
+  var rankValue = {"A" : 1, "2" : 2, "3" : 3, "4" : 4, "5" : 5, "6" : 6, "7" : 7, "8" : 8, "9" : 9, "10" : 10, "J" : 10, "K" : 10, "Q" : 10};
   // Deck to hold every suit of card with every rank
   var deck = {Clubs : rankArray, Diamonds : rankArray, Hearts : rankArray, Spades : rankArray};
 
